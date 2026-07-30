@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@theme{
+    --radius-circle:50%
+}
+@layer base{
+    span,a,label{
+        display: inline-block;
+    }
+}
+@layer components{
+    .btn{
+        @apply cursor-pointer rounded-xl border border-gray-400/25 px-3 py-2 
+    }
+    .form-control{
+        @apply bg-gray-300/25 focus:outline-none border border-gray-400/25 rounded-xl w-full py-3 pl-12 focus:border-blue-500 transition-colors duration-200
+    }
+}
