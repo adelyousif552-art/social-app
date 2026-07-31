@@ -50,7 +50,7 @@ export default function Bookmarks({navbar=true}) {
  {navbar? <Navbar/>:''}
   <div className="max-w-2xl mx-auto">
     {bookmarks?bookmarks.map((postinfo)=>{
-    return <Postcard comments={comments} getcomments={getcomments} getposts={getbookmarks} postinfo={postinfo} key={postinfo.id}/>
+    return <Postcard  getposts={getbookmarks} postinfo={postinfo} key={postinfo.id}/>
 
   }):<PostCardSkeleton/>}
   </div>

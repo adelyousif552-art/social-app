@@ -181,7 +181,7 @@ export default function Profile() {
   </div>
   <div className="max-w-2xl mx-auto mt-15 ">
     {posts&&openposts?posts.map((postinfo)=>{
-      return <Postcard comments={comments} getcomments={getcomments} getposts={getuserposts} key={postinfo.id} postinfo={postinfo}/>
+      return <Postcard  getposts={getuserposts} key={postinfo.id} postinfo={postinfo}/>
 
     }):bookmarks||openfollowers||openfollowing?'':<PostCardSkeleton/>}
     {bookmarks&&profile.user.bookmarksCount?<Bookmarks navbar={false}/>:''}
@@ -208,7 +208,7 @@ followuser(user._id)
 
 
     </div>
-    }):<div className="bg-white p-10 text-center shadow-xl rounded-2xl "><p className="text-xl">No Following</p></div>:''}
+    }):<div className="bg-white p-10 text-center shadow-xl rounded-2xl "><p className="text-xl">No Followers</p></div>:''}
 
  {openfollowing?
     profile?.user.following.length?userprofile?.user.following.map((user)=>{
