@@ -14,7 +14,7 @@ import Popup from "../Popup/Popup";
 
 
 
-export default function Postcard({postinfo,showallcomments,comments,getposts,setrefreshsidebar}) {
+export default function Postcard({postinfo,getcomments,showallcomments,comments,getposts,setrefreshsidebar}) {
    const {setpopup,setsharedpost,setupdpopup,setupdatedpost}=useContext(Authcontext)
 
     
@@ -49,6 +49,11 @@ export default function Postcard({postinfo,showallcomments,comments,getposts,set
             
         formik.resetForm()
         getposts()
+        if(comments){
+            getcomments()
+        }
+        setpreviewimage(null)
+        
         toast.success('comment created successfully')
         }
       } catch (error) {
@@ -186,6 +191,7 @@ headers:{
                <button   onClick={()=>{
                 bookmarks()
                 setpostbookmarked(!postbookmarked)
+                setopenlist(false)
                }} className={`flex w-full cursor-pointer items-center  `} >
                  <FontAwesomeIcon icon={faBookmark} />
                 <span>Bookmark</span>
@@ -195,11 +201,16 @@ headers:{
                <button onClick={()=>{
                 setupdpopup(true)
                 setupdatedpost(postinfo)
+                setopenlist(false)
                }} className=" w-full flex items-center cursor-pointer"> <FontAwesomeIcon icon={faPenToSquare} />
                 <span>Edit Post</span></button>
             </li>
              <li>
-                <button onClick={deletepost} className="flex w-full items-center cursor-pointer">
+                <button onClick={()=>{
+                    deletepost()
+                    setopenlist(false)
+
+                }} className="flex w-full items-center cursor-pointer">
                     <FontAwesomeIcon icon={faTrash} />
                 <span>Delete Post</span>
                 </button>

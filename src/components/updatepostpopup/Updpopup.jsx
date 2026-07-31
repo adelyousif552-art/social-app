@@ -5,6 +5,7 @@ import { Authcontext } from '../../Context/Auth.context'
 import { useFormik } from 'formik'
 import axios from 'axios'
 import { toast } from 'react-toastify'
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
 
 export default function Updpopup({getuserposts}) {
     const {updatedpost,token,setupdpopup}=useContext(Authcontext)
@@ -12,7 +13,9 @@ export default function Updpopup({getuserposts}) {
     async function handlesubmit(values){
         const formdata=new FormData()
         formdata.append('body',values.body)
-        formdata.append('image',values.image)
+        if(values.image){
+            formdata.append('image',values.image)
+        }
         try {
             const options={
                 url:`https://route-posts.routemisr.com/posts/${updatedpost.id}`,
@@ -76,8 +79,15 @@ export default function Updpopup({getuserposts}) {
             }} type="file" id='image2' name='image' className='hidden' />
         </div>
         {previewimage2?<>
-        <div className="image w-1/2 mx-auto mt-5">
+        <div className="image relative w-1/2 mx-auto mt-5">
             <img src={previewimage2} alt='image' className='w-full'/>
+            
+                <div className='absolute cursor-pointer top-0 right-0 size-8 flex items-center rounded-full justify-center bg-blue-600'>
+                    <button onClick={()=>{
+                        setpreviewimage2(null)
+                    }} className='cursor-pointer'><FontAwesomeIcon icon={faXmark} className='  text-white  '/></button>
+                </div>
+            
         </div>
         </>:''}
         <button className='btn bg-blue-500 cursor-pointer hover:-translate-y-2 transition-all duration-200 text-white w-full mt-5'>update</button>
