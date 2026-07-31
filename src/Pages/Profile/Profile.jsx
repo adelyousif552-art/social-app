@@ -8,6 +8,7 @@ import Bookmarks from "../Bookmarks/Bookmarks";
 import cover from '../../assets/images/y.jpg'
 import { useParams } from "react-router";
 import Updpopup from "../../components/updatepostpopup/Updpopup";
+import Popup from "../../components/Popup/Popup";
 
 
 
@@ -16,6 +17,27 @@ export default function Profile() {
   const [follow,setfollow]=useState(false)
   const {id}=useParams()
   const [following,setfollowing]=useState(false)
+  const [comments,setcomments]=useState(null)
+   async function getcomments(){
+          const options={
+              url:`https://route-posts.routemisr.com/posts/${id}/comments?page=1&limit=10`,
+              method:"GET",
+              headers:{
+                token
+              }
+              
+  
+          }
+          const {data}=await axios.request(options)
+          
+          setcomments(data.data.comments)
+          console.log(data.data.comments);
+          
+          
+          
+          
+          
+      }
   async function followuser(usid){
     const options={
       url:`https://route-posts.routemisr.com/users/${usid}/follow`,
@@ -50,7 +72,7 @@ export default function Profile() {
     }
   
   
-  const {userid,setupdpopup,updpopup}=useContext(Authcontext)
+  const {userid,setupdpopup,updpopup,popup}=useContext(Authcontext)
   const [posts,setposts]=useState(null)
   const [openposts,setopenposts]=useState(true)
   const [bookmarks,setbookmarks]=useState(false)
@@ -159,7 +181,7 @@ export default function Profile() {
   </div>
   <div className="max-w-2xl mx-auto mt-15 ">
     {posts&&openposts?posts.map((postinfo)=>{
-      return <Postcard key={postinfo.id} postinfo={postinfo}/>
+      return <Postcard comments={comments} getcomments={getcomments} getposts={getuserposts} key={postinfo.id} postinfo={postinfo}/>
 
     }):bookmarks||openfollowers||openfollowing?'':<PostCardSkeleton/>}
     {bookmarks&&profile.user.bookmarksCount?<Bookmarks navbar={false}/>:''}
@@ -216,6 +238,7 @@ followuser(user._id)
     
   </div>
   {updpopup?<Updpopup getuserposts={getuserposts}/>:''}
+ 
   
   </>
 }
