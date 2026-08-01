@@ -74,7 +74,7 @@ export default function Postupload({getposts}) {
 
     </div>
     <div>
-        <Formfield elementtype={'textarea'} placeholder={"what's in your mind"} name={'body'} touched={formik.touched.body} onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.body} error={formik.errors.body}/>
+        <Formfield id={'post'} elementtype={'textarea'} placeholder={"what's in your mind"} name={'body'} touched={formik.touched.body} onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.body} error={formik.errors.body}/>
     </div>
    {previewimage?<> <div className="image relative">
         <img src={previewimage} className='w-full' alt="photo" />
