@@ -10,7 +10,7 @@ import boy from '../../assets/images/boy.png'
 import { useFormik } from "formik";
 import * as yup from'yup'
 import { toast } from "react-toastify";
-import Popup from "../Popup/Popup";
+
 
 
 
@@ -120,15 +120,15 @@ export default function Postcard({postinfo,getcomments,showallcomments,comments,
             }
         }
         const {data}=await axios.request(options)
-        setbookmarkscount(data.data.bookmarksCount)
-        localStorage.setItem('bookcounts',data.data.bookmarksCount)
+        
+        
        
         
 
         
     }
     const [postbookmarked,setpostbookmarked]=useState(postinfo.bookmarked)
-    const {setbookmarkscount}=useContext(Authcontext)
+   
    
     const {token,userid}=useContext(Authcontext)
      async function deletepost(){

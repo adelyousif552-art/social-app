@@ -66,7 +66,7 @@ export default function Passwordpopup({passwordpopup}) {
             <label htmlFor="newpass">new password</label>
             <input className="form-control" id="newpass" value={formik.values.newPassword} onChange={formik.handleChange} onBlur={formik.handleBlur} type="password" placeholder="new password" name="newPassword"/>
         </div>
-        {formik.errors.newPasswordpassword&&formik.touched.newPasswordpassword?<p className="text-red-500">{formik.errors.newPasswordpassword}</p>:''}
+        {formik.errors.newPassword&&formik.touched.newPassword?<p className="text-red-500">{formik.errors.newPassword}</p>:''}
         <button className="btn w-full bg-blue-500 text-white">change password</button>
     </form>
   </div>
