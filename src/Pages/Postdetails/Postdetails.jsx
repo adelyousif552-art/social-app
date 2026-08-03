@@ -3,8 +3,9 @@ import { Authcontext } from "../../Context/Auth.context"
 import Postcard from "../../components/Postcard/Postcard"
 import axios from "axios"
 import { useParams } from "react-router"
-import Commentcard from "../../components/Commentcard/Commentcard"
+
 import Popup from "../../components/Popup/Popup"
+import PostCardSkeleton from "../../components/Postcardskeleton/Postcardskeleton"
 
 
 export default function Postdetails() {
@@ -67,7 +68,7 @@ export default function Postdetails() {
 
   return <>
   <div className="post max-w-2xl mx-auto">
-    {post?<Postcard postinfo={post} getposts={getpost} getcomments={getcomments} comments={comments} />:<p>loading</p>}
+    {post?<Postcard postinfo={post} getpost={getpost} getposts={getpost} getcomments={getcomments} comments={comments} />:<PostCardSkeleton/>}
    
   </div>
   {popup?<Popup/>:''}

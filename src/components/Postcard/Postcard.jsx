@@ -21,7 +21,7 @@ export default function Postcard({postinfo,getcomments,showallcomments,comments,
    
 
     
-    const[myposts,setmyposts]=useState(null)
+    
     
     const [openlist,setopenlist]=useState(false)
     const[previewimage,setpreviewimage]=useState(null)
@@ -148,6 +148,8 @@ headers:{
     
     
  }
+ 
+ 
   
  
     
@@ -322,7 +324,7 @@ headers:{
                </div>:''}
             </form>
            {comments?comments.map((comment)=>{
-            return <Commentcard key={comment._id} postid={postinfo.id} reply={comment.repliesCount} topcomment={comment}/>
+            return <Commentcard key={comment._id} getposts={getposts} postid={postinfo.id} reply={comment.repliesCount} topcomment={comment}/>
            }):showallcomments?commentsCount?<><Commentcard postid={postinfo.id} topcomment={topComment}/><Link to={`/post/${postinfo.id}`} className="w-full text-center bg-linear-to-r from-blue-400 to-blue-700 text-white py-2 rounded-xl cursor-pointer">show all comments</Link></>:<p className="text-center">no comments yet</p>:commentsCount?<><Commentcard postid={postinfo.id} topcomment={topComment}/></>:<p className="text-center">no comments yet</p>
            }
            
@@ -414,8 +416,8 @@ headers:{
                </div>:''}
             </form>
            {comments?comments.map((comment)=>{
-            return <Commentcard key={comment._id} postid={postinfo.id} reply={comment.repliesCount} topcomment={comment}/>
-           }):showallcomments?commentsCount?<><Commentcard postid={postinfo.id} topcomment={topComment}/><Link to={`/post/${postinfo.id}`} className="w-full text-center bg-linear-to-r from-blue-400 to-blue-700 text-white py-2 rounded-xl cursor-pointer">show all comments</Link></>:<p className="text-center">no comments yet</p>:commentsCount?<><Commentcard postid={postinfo.id} topcomment={topComment}/></>:<p className="text-center">no comments yet</p>
+            return <Commentcard key={comment._id} postid={postinfo.id} getposts={getcomments} reply={comment.repliesCount} topcomment={comment}/>
+           }):showallcomments?commentsCount?<><Commentcard postid={postinfo.id} getposts={getposts} topcomment={topComment}/><Link to={`/post/${postinfo.id}`} className="w-full text-center bg-linear-to-r from-blue-400 to-blue-700 text-white py-2 rounded-xl cursor-pointer">show all comments</Link></>:<p className="text-center">no comments yet</p>:commentsCount?<><Commentcard postid={postinfo.id} getposts={getposts} topcomment={topComment}/></>:<p className="text-center">no comments yet</p>
            }
            
            

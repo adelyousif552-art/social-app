@@ -6,8 +6,7 @@ import Postupload from "../../components/postupload/Postupload";
 import usePosts from "../../Hooks/usePosts";
 import Sidebar1 from "../../components/Sidebar1/Sidebar1";
 import Sidebar2 from "../../components/Sidebar2/Sidebar2";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
+
 import Popup from "../../components/Popup/Popup";
 import Updpopup from "../../components/updatepostpopup/Updpopup";
 
