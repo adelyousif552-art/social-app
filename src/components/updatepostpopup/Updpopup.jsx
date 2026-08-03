@@ -9,7 +9,7 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import * as yup from 'yup'
 
 export default function Updpopup({getuserposts}) {
-    const validation=faYoutube.object({
+    const validation=yup.object({
         body:yup.string().required('caption is required'),
         image:yup.mixed().nullable().test('size','image size should be less than 5mb',(value)=>{
             
