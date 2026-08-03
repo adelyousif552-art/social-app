@@ -8,7 +8,7 @@ import Bookmarks from "../Bookmarks/Bookmarks";
 import cover from '../../assets/images/y.jpg'
 import { useParams } from "react-router";
 import Updpopup from "../../components/updatepostpopup/Updpopup";
-import Popup from "../../components/Popup/Popup";
+
 
 
 
@@ -123,7 +123,7 @@ export default function Profile() {
   return <>
   <Navbar/>
   
-  <div className="bg-white rounded-xl p-5 shadow max-w-2xl mx-auto mt-10">
+  <div className="bg-white rounded-xl p-5 shadow max-w-4xl mx-auto mt-10">
     <div className="coverphoto rounded-2xl  ">
       <img className="w-full h-60 rounded-2xl" src={cover} alt="" />
     </div>
@@ -179,7 +179,7 @@ export default function Profile() {
    </div>
 
   </div>
-  <div className="max-w-2xl mx-auto mt-15 ">
+  <div className="max-w-4xl mx-auto mt-15 ">
     {posts&&openposts?posts.map((postinfo)=>{
       return <Postcard  getposts={getuserposts} key={postinfo.id} postinfo={postinfo}/>
 
