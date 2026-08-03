@@ -15,7 +15,8 @@ export default function Navbar() {
 
     const [countnot,setcountnot]=useState(null)
     async function getunreadcount(){
-        const options={
+      try {
+          const options={
             url:'https://route-posts.routemisr.com/notifications/unread-count',
             method:"GET",
             headers:{
@@ -24,14 +25,19 @@ export default function Navbar() {
             
         }
         const {data}=await axios.request(options)
-        console.log("count not",data);
+        
         setcountnot(data.data.unreadCount)
+      } catch (error) {
+        console.log(error);
+        
+      }
         
     }
     const navigate=useNavigate()
     const [notifications,setnotifications]=useState(null)
     async function getnotifications(){
-        const options={
+       try {
+         const options={
             url:'https://route-posts.routemisr.com/notifications?unread=false&page=1&limit=10',
             method:"GET",
             headers:{
@@ -40,7 +46,11 @@ export default function Navbar() {
         }
         const {data}=await axios.request(options)
         setnotifications(data.data.notifications)
-        console.log("notifications",data);
+       } catch (error) {
+        console.log(error);
+        
+       }
+        
         
     }
     const [opennotification,setopennotification]=useState(false)
@@ -52,7 +62,8 @@ export default function Navbar() {
     const {userid}=useContext(Authcontext)
     const {token,settoken} =useContext(Authcontext)
     async function getmyprofile(){
-      const options={
+     try {
+         const options={
           url:'https://route-posts.routemisr.com/users/profile-data',
           method:"GET",
           headers:{
@@ -61,11 +72,16 @@ export default function Navbar() {
       }
       const {data}=await axios.request(options)
       setmyprofile(data.data)
-      console.log("myprofile",data);
+     } catch (error) {
+        console.log(error);
+        
+     }
+      
       
      }
       async function getsuggestions(){
-        const options={
+       try {
+         const options={
             url:'https://route-posts.routemisr.com/users/suggestions?limit=50',
             method:"GET",
             headers:{
@@ -76,11 +92,16 @@ export default function Navbar() {
         }
         const {data}=await axios.request(options)
         setusers(data.data.suggestions)
-        console.log("allusers",data);
+       } catch (error) {
+        console.log(error);
+        
+       }
+        
         
     }
     async function markasread(id){
-        const options={
+      try {
+          const options={
             url:`https://route-posts.routemisr.com/notifications/${id}/read`,
             method:"PATCH",
             headers:{
@@ -89,7 +110,11 @@ export default function Navbar() {
         }
 
         const {data}=await axios.request(options)
-        console.log(data);
+      } catch (error) {
+        console.log(error);
+        
+      }
+       
         
         
     }

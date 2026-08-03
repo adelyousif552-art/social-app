@@ -56,7 +56,7 @@ const stats=[{
 ]
 
   return<>
-  <div className="signuphero flex flex-col justify-between gap-10 p-5 text-white min-h-screen" style={{
+  <div className="signuphero hidden lg:flex lg:flex-col lg:justify-between gap-10 p-5 text-white min-h-screen" style={{
     backgroundImage:`linear-gradient(#1447e6cc,#1447e6cc),url(${image})`,
     backgroundRepeat:'no-repeat',
     backgroundSize:'cover',
