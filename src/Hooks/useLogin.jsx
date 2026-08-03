@@ -32,7 +32,7 @@ export default function useLogin() {
      
      
      
-     console.log(data);
+     
      
      
      

@@ -9,7 +9,7 @@ import PostCardSkeleton from "../Postcardskeleton/Postcardskeleton";
 
 export default function Feed({posts,getposts,setrefreshsidebar}) {
     const [list,setlist]=useState(false)
-    console.log("posts",posts);
+   
     
   
   return <>

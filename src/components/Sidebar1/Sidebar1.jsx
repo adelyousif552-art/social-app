@@ -45,7 +45,7 @@ export default function Sidebar1({getposts,refreshsidebar}) {
     }
     const{data}=await axios.request(options)
     setposts(data.data.posts)
-    console.log("userposts",data);
+    
     
   }
   async function handlesubmit(values){
@@ -68,7 +68,7 @@ export default function Sidebar1({getposts,refreshsidebar}) {
             toast.success(data.message)
             setpreviewimage(null)
         }
-        console.log(data);
+       
         
     } catch (error) {
         console.log(error);
@@ -83,7 +83,7 @@ export default function Sidebar1({getposts,refreshsidebar}) {
         
         getuserposts()
      },[refreshsidebar])
-     console.log("Sidebar userid =", userid);
+    
   return <>
   {profile?<section className="firsts  max-w-2xl mx-auto sticky top-0  ">
     <div className="sidebar1 bg-linear-to-b  from-blue-500 from-25% to-white to-25% rounded-2xl shadow p-5 mt-10 h-fit">

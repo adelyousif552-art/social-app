@@ -52,7 +52,7 @@ export default function Commentcard({topcomment,reply,postid}) {
             data:formdata
         }
         const {data}=await axios.request(options)
-        console.log(data);
+        
         
         
         if(data.success){

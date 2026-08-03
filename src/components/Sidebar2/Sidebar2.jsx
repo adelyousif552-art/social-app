@@ -19,7 +19,7 @@ export default function Sidebar2() {
         }
         const {data}=await axios.request(options)
         setsuggestions(data.data.suggestions)
-        console.log(data);
+       
         
     }
    

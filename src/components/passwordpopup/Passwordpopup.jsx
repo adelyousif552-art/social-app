@@ -25,7 +25,7 @@ export default function Passwordpopup({passwordpopup}) {
 
             }
             const {data}=await axios.request(options)
-            console.log("passdata",data);
+           
             if(data.success){
                 toast.success(data.message)
                 formik.resetForm()

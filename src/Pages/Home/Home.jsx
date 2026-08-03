@@ -14,13 +14,13 @@ import Updpopup from "../../components/updatepostpopup/Updpopup";
 
 export default function Home() {
   const {popup,sharedpost,updpopup}=useContext(Authcontext)
-  console.log("popup",Popup);
+  
   
   const {posts,getposts}=usePosts()
   const [refreshsidebar,setrefreshsidebar]=useState(false)
   
   const{token}=useContext(Authcontext)
-  console.log('home',token);
+  
   return <>
    <Navbar/>
   <div className="grid lg:grid-cols-4   gap-5 ">

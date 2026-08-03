@@ -26,7 +26,7 @@ export default function Postdetails() {
           const {data}=await axios.request(options)
           
           setcomments(data.data.comments)
-          console.log(data.data.comments);
+         
           
           
           
@@ -64,7 +64,7 @@ export default function Postdetails() {
     
     
   },[])
-// postinfo,showallcomments,comments,getposts,setrefreshsidebar
+
   return <>
   <div className="post max-w-2xl mx-auto">
     {post?<Postcard postinfo={post} getposts={getpost} getcomments={getcomments} comments={comments} />:<p>loading</p>}

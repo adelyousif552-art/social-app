@@ -39,9 +39,7 @@ export default function Commentreply({replyopened,reply,formik,postid,previewima
                         const file=e.target.files[0]
                         formik.setFieldValue('image',file)
                         setpreviewimage(URL.createObjectURL(file))
-                        console.log(file);
-                        console.log(URL.createObjectURL(file));
-                        console.log(previewimage);
+                       
                         
                         
                         
@@ -55,7 +53,7 @@ export default function Commentreply({replyopened,reply,formik,postid,previewima
                 </div>
                 {formik.errors.image&&formik.touched.image?<p className="text-red-500">{formik.errors.image}</p>:''}
                </div>
-               {console.log("last",previewimage) }
+               
              {previewimage? <div className="previewimage relative bg-gray-300/25 border border-gray-400/50 max-w-1/6 p-3 my-2">
                 <img className="w-full" src={previewimage} alt="" />
                 <button onClick={()=>{

@@ -16,7 +16,7 @@ export const Authcontext=createContext(null)
     const [userid,setuserid]=useState(localStorage.getItem('userid'))
     
     const [updpopup,setupdpopup]=useState(false)
-    console.log("userid =", userid);
+    
      async function getuserprofile(userid){
         const options={
             url:`https://route-posts.routemisr.com/users/${userid}/profile`,
@@ -29,7 +29,7 @@ export const Authcontext=createContext(null)
         setuserprofile(data.data)
         
         
-        console.log("userprofile",data);
+        
         
     }
     

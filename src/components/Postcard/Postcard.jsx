@@ -104,7 +104,7 @@ export default function Postcard({postinfo,getcomments,showallcomments,comments,
             
             getposts()
 
-            console.log(data);
+            
             
         } catch (error) {
             console.log(error);
@@ -122,7 +122,7 @@ export default function Postcard({postinfo,getcomments,showallcomments,comments,
         const {data}=await axios.request(options)
         setbookmarkscount(data.data.bookmarksCount)
         localStorage.setItem('bookcounts',data.data.bookmarksCount)
-        console.log(data);
+       
         
 
         
@@ -145,7 +145,7 @@ headers:{
         getposts()
         setrefreshsidebar(true)
     }
-    console.log(data);
+    
     
  }
   
@@ -158,7 +158,7 @@ headers:{
     const {image,sharesCount,createdAt,user,body,commentsCount,topComment,likes}=postinfo
     const like=likes.includes(userid)
     
-    console.log("postinfo",postinfo);
+    
     
    
 
@@ -298,9 +298,7 @@ headers:{
                         const file=e.target.files[0]
                         formik.setFieldValue('image',file)
                         setpreviewimage(URL.createObjectURL(file))
-                        console.log(file);
-                        console.log(URL.createObjectURL(file));
-                        console.log(previewimage);
+                       
                         
                         
                         
@@ -314,7 +312,7 @@ headers:{
                 </div>
                 {formik.errors.image&&formik.touched.image?<p className="text-red-500">{formik.errors.image}</p>:''}
                </div>
-               {console.log("last",previewimage) }
+               
              {previewimage? <div className="previewimage relative bg-gray-300/25 border border-gray-400/50 max-w-1/6 p-3 my-2">
                 <img className="w-full" src={previewimage} alt="" />
                 <button onClick={()=>{
@@ -392,9 +390,7 @@ headers:{
                         const file=e.target.files[0]
                         formik.setFieldValue('image',file)
                         setpreviewimage(URL.createObjectURL(file))
-                        console.log(file);
-                        console.log(URL.createObjectURL(file));
-                        console.log(previewimage);
+                       
                         
                         
                         
@@ -408,7 +404,7 @@ headers:{
                 </div>
                 {formik.errors.image&&formik.touched.image?<p className="text-red-500">{formik.errors.image}</p>:''}
                </div>
-               {console.log("last",previewimage) }
+               
              {previewimage? <div className="previewimage relative bg-gray-300/25 border border-gray-400/50 max-w-1/6 p-3 my-2">
                 <img className="w-full" src={previewimage} alt="" />
                 <button onClick={()=>{

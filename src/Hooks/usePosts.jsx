@@ -18,7 +18,7 @@ export default function usePosts() {
         const {data}=await axios.request(options)
         
         setposts(data.data.posts)
-        console.log("my posts",data);
+        
         
     }
     useEffect(()=>{

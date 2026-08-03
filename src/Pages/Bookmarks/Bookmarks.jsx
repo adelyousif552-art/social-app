@@ -23,7 +23,7 @@ export default function Bookmarks({navbar=true}) {
           const {data}=await axios.request(options)
           
           setcomments(data.data.comments)
-          console.log(data.data.comments);
+          
           
           
           
@@ -40,7 +40,7 @@ export default function Bookmarks({navbar=true}) {
         }
         const {data}=await axios.request(options)
         setbookmarks(data.data.bookmarks)
-        console.log(data);
+       
         
     }
     useEffect(()=>{

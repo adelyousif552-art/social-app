@@ -31,7 +31,7 @@ export default function Profile() {
           const {data}=await axios.request(options)
           
           setcomments(data.data.comments)
-          console.log(data.data.comments);
+          
           
           
           
@@ -52,7 +52,7 @@ export default function Profile() {
    
     
 
-    console.log(data);
+   
     
   }
    async function getuserprofile(id){
@@ -67,7 +67,7 @@ export default function Profile() {
         setuserprofile(data.data)
         setfollow(data.data.isFollowing)
         
-        console.log("userprofile",data);
+       
         
     }
   
@@ -91,7 +91,7 @@ export default function Profile() {
     }
     const{data}=await axios.request(options)
     setposts(data.data.posts)
-    console.log("userposts",data);
+    
     
   }
   async function getmyprofile(){
