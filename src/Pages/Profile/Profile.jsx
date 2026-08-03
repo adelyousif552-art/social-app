@@ -123,7 +123,7 @@ export default function Profile() {
   return <>
   <Navbar/>
   
-  <div className="bg-white rounded-xl p-5 shadow max-w-4xl mx-auto mt-10">
+  <div className="bg-white rounded-xl p-5 shadow max-w-2xl mx-auto mt-10">
     <div className="coverphoto rounded-2xl  ">
       <img className="w-full h-60 rounded-2xl" src={cover} alt="" />
     </div>
@@ -149,7 +149,7 @@ export default function Profile() {
       <li>{profile?.user.followersCount} <span className="text-gray-800/80">{profile?.user.followersCount>1?'followers':'follower'}</span></li>
       <li>{profile?.user.followingCount} <span className="text-gray-800/80">Following</span></li>
     </ul>
-    <ul className="flex *:cursor-pointer items-center text-gray-800/80 gap-10 mt-10">
+    <ul className="flex xl:flex-row flex-col *:cursor-pointer items-center text-gray-800/80 gap-10 mt-10">
       <li className={`${openposts?'border-b-5 border-blue-500':''} relative before:absolute before:-bottom-1 before:bg-blue-500 before:w-0 before:h-1 hover:before:w-full before:transition-all before:duration-200 `} onClick={()=>{
         setopenposts(true)
         setbookmarks(false)
@@ -179,7 +179,7 @@ export default function Profile() {
    </div>
 
   </div>
-  <div className="max-w-4xl mx-auto mt-15 ">
+  <div className="max-w-2xl mx-auto mt-15 ">
     {posts&&openposts?posts.map((postinfo)=>{
       return <Postcard  getposts={getuserposts} key={postinfo.id} postinfo={postinfo}/>
 

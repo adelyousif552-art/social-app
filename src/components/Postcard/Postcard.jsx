@@ -239,7 +239,7 @@ headers:{
     <div className="postinfo space-y-5">
         <p>{postinfo.sharedPost.body}</p>
         {postinfo.sharedPost.image?<div className="image -mx-3">
-            <img className="w-full h-120 object-cover object-center" src={postinfo.sharedPost.image} alt="" />
+            <img className="w-full " src={postinfo.sharedPost.image} alt="" />
         </div>:''}
         <div className="reactions flex items-center justify-between">
             <div className="flex gap-2 items-center">
