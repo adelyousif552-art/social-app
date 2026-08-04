@@ -92,7 +92,7 @@ export default function Replycard({reply,postid,getreply}) {
     const iscommentowner=commentCreator._id==userid
 
   return <>
-  <div className="flex gap-2 mx-20 ">
+  <div className="flex gap-2 mx-5 ">
      <div className="image ">
          <img className="size-12 rounded-full " src={commentCreator.photo} alt={commentCreator.name} />
     </div>
