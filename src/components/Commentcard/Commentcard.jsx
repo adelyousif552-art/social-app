@@ -260,7 +260,7 @@ export default function Commentcard({topcomment,reply,postid,getposts}) {
             </div>
            
            </div>
-           <Commentreply getreply={getreply} reply={replycomments.length}  image={image} setshowreplies={setshowreplies} boy={boy} showreplies={showreplies} replyopened={replyopened} formik={formik} postid={postid} previewimage={previewimage} setpreviewimage={setpreviewimage} replycomments={replycomments}/>
+           <Commentreply commentid={topcomment._id} getreply={getreply} reply={replycomments.length}  image={image} setshowreplies={setshowreplies} boy={boy} showreplies={showreplies} replyopened={replyopened} formik={formik} postid={postid} previewimage={previewimage} setpreviewimage={setpreviewimage} replycomments={replycomments}/>
           
   </>
 }

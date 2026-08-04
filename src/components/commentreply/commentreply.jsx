@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import { faImage, faPaperPlane } from '@fortawesome/free-regular-svg-icons'
 
-export default function Commentreply({replyopened,reply,formik,postid,previewimage,setpreviewimage,showreplies,replycomments,setshowreplies,image,boy}) {
+export default function Commentreply({replyopened,commentid,reply,formik,postid,previewimage,setpreviewimage,showreplies,replycomments,setshowreplies,image,boy}) {
     
     
     const{token}=useContext(Authcontext)
@@ -30,9 +30,9 @@ export default function Commentreply({replyopened,reply,formik,postid,previewima
                        {formik.errors.content&&formik.touched.content?<p className="text-red-500">{formik.errors.content}</p>:''}
                 </div>
                 <div className="file">
-                    <label className="size-8 rounded-full flex items-center justify-center border border-gray-400/50 cursor-pointer hover:bg-gray-400/50 transition-colors duration-200" htmlFor={postid}><FontAwesomeIcon icon={faImage}/></label>
+                    <label className="size-8 rounded-full flex items-center justify-center border border-gray-400/50 cursor-pointer hover:bg-gray-400/50 transition-colors duration-200" htmlFor={commentid}><FontAwesomeIcon icon={faImage}/></label>
                     <input type="file"
-                     id={postid}
+                     id={commentid}
                       className="hidden"
                       name="image"
                       onChange={(e)=>{
@@ -79,7 +79,7 @@ export default function Commentreply({replyopened,reply,formik,postid,previewima
 
                 </div>
                 {image?<div>
-                    <img className="size-20" src={image} alt="user" />
+                    <img className="size-20" src={replycomment.image} alt="user" />
 
                 </div>:''}
                  <div className="space-x-3">
