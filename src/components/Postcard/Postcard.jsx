@@ -257,7 +257,7 @@ headers:{
             </div>
            <span className="text-sm text-gray-600/80">{commentsCount} Comments</span>
         </div>
-        <div className="reactionbuttons *:cursor-pointer *:hover:bg-gray-100 *:transition-colors *:duration-200 flex *:grow *:p-3">
+        <div className="reactionbuttons *:cursor-pointer *:active:bg-gray-100 *:transition-colors *:duration-200 flex *:grow *:p-3">
             <button onClick={putlikes} className={`border-y ${like?'text-blue-600 font-semibold':''}  transition-colors duration-400  border-gray-500/70 `}>
                 <FontAwesomeIcon className={``} icon={faThumbsUp}/>
                 <span>Like</span>
@@ -349,7 +349,7 @@ headers:{
             </div>
            <span className="text-sm text-gray-600/80">{commentsCount} Comments</span>
         </div>
-        <div className="reactionbuttons *:cursor-pointer *:hover:bg-gray-100 *:transition-colors *:duration-200 flex *:grow *:p-3">
+        <div className="reactionbuttons *:cursor-pointer *:active:bg-gray-100 *:transition-colors *:duration-200 flex *:grow *:p-3">
             <button onClick={putlikes} className={`border-y ${like?'text-blue-600 font-semibold':''}  transition-colors duration-400  border-gray-500/70 `}>
                 <FontAwesomeIcon className={``} icon={faThumbsUp}/>
                 <span>Like</span>
