@@ -4,8 +4,9 @@ import { Authcontext } from '../../Context/Auth.context'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import { faImage, faPaperPlane } from '@fortawesome/free-regular-svg-icons'
+import Replycard from '../Replycard/Replycard'
 
-export default function Commentreply({replyopened,commentid,reply,formik,postid,previewimage,setpreviewimage,showreplies,replycomments,setshowreplies,image,boy}) {
+export default function Commentreply({replyopened,commentid,reply,formik,postid,previewimage,setpreviewimage,showreplies,replycomments,setshowreplies,image,boy,getreply}) {
     
     
     const{token}=useContext(Authcontext)
@@ -69,28 +70,7 @@ export default function Commentreply({replyopened,commentid,reply,formik,postid,
            }} className="font-bold cursor-pointer mx-20">Show replies (+{reply})</button>
 
            {showreplies?replycomments.map((replycomment)=>{
-            return <div className="flex  gap-2 mx-20 ">
-             <div className="image ">
-                 <img className="size-12 rounded-full " src={replycomment.commentCreator.photo} alt={replycomment.commentCreator.name} />
-            </div>
-            <div >
-                <div className="commenttext  max-w-xl bg-gray-400/20 p-3 rounded-xl">
-                    <p>{replycomment.content}</p>
-
-                </div>
-                {image?<div>
-                    <img className="size-20" src={replycomment.image} alt="user" />
-
-                </div>:''}
-                 <div className="space-x-3">
-            <span>{new Date(replycomment.createdAt).toDateString()}</span>
-            <button className="cursor-pointer">Like</button>
-            <button className="cursor-pointer">Reply</button>
-           </div>
-                
-            </div>
-           
-           </div>
+            return <Replycard key={replycomment._id} reply={replycomment} postid={postid} getreply={getreply}/>
            })
            
 

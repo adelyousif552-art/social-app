@@ -325,7 +325,7 @@ headers:{
             </form>
            {comments?comments.map((comment)=>{
             return <Commentcard key={comment._id} getposts={getposts} postid={postinfo.id} reply={comment.repliesCount} topcomment={comment}/>
-           }):showallcomments?commentsCount?<><Commentcard postid={postinfo.id} topcomment={topComment}/><Link to={`/post/${postinfo.id}`} className="w-full text-center bg-linear-to-r from-blue-400 to-blue-700 text-white py-2 rounded-xl cursor-pointer">show all comments</Link></>:<p className="text-center">no comments yet</p>:commentsCount?<><Commentcard postid={postinfo.id} topcomment={topComment}/></>:<p className="text-center">no comments yet</p>
+           }):showallcomments?commentsCount?<><Commentcard postid={postinfo.id} getposts={getposts} topcomment={topComment}/><Link to={`/post/${postinfo.id}`} className="w-full text-center bg-linear-to-r from-blue-400 to-blue-700 text-white py-2 rounded-xl cursor-pointer">show all comments</Link></>:<p className="text-center">no comments yet</p>:commentsCount?<><Commentcard postid={postinfo.id} getposts={getposts} topcomment={topComment}/></>:<p className="text-center">no comments yet</p>
            }
            
            
