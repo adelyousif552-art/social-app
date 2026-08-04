@@ -9,7 +9,7 @@ import* as yup from'yup'
 import { toast } from "react-toastify";
 
 export default function Popup({getposts}) {
-    const {sharedpost}=useContext(Authcontext)
+    const {sharedpost,getmyprofile}=useContext(Authcontext)
     const validation=yup.object({
         body:yup.string().required("required")
     })
@@ -35,10 +35,12 @@ export default function Popup({getposts}) {
             setpopup(false)
             toast.success(data.message)
             getposts()
+            getmyprofile()
         }
         
        } catch (error) {
         console.log(error.response.data);
+        toast.error(error.response?.data.message)
         
         
        }

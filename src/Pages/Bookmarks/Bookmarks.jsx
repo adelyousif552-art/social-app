@@ -55,7 +55,7 @@ export default function Bookmarks({navbar=true,getposts}) {
 
   }):<PostCardSkeleton/>}
   </div>
-{popup?<Popup getposts={getposts}/>:''}
+{popup?<Popup getposts={getposts||getbookmarks}/>:''}
   
   </>
 }

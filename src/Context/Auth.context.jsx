@@ -10,7 +10,7 @@ export const Authcontext=createContext(null)
      const [popup,setpopup]=useState(false)
      const[sharedpost,setsharedpost]=useState(null)
      const [updatedpost,setupdatedpost]=useState(null)
-   
+    const [myprofile,setmyprofile]=useState(null)
     
     const [token,settoken]=useState(localStorage.getItem('token'))
     const [userid,setuserid]=useState(localStorage.getItem('userid'))
@@ -28,12 +28,30 @@ export const Authcontext=createContext(null)
         const {data}=await axios.request(options)
         setuserprofile(data.data)
         
-        
+       
         
         
     }
+    async function getmyprofile(){
+     try {
+         const options={
+          url:'https://route-posts.routemisr.com/users/profile-data',
+          method:"GET",
+          headers:{
+              token
+          }
+      }
+      const {data}=await axios.request(options)
+      setmyprofile(data.data)
+     } catch (error) {
+        console.log(error);
+        
+     }
+      
+      
+     }
     
-    return <Authcontext.Provider value={{token,settoken,sharedpost,setsharedpost,updatedpost,setupdatedpost,updpopup,setupdpopup,userid,setuserid,popup,setpopup,getuserprofile,profile}}>
+    return <Authcontext.Provider value={{token,settoken,sharedpost,myprofile,getmyprofile,setsharedpost,updatedpost,setupdatedpost,updpopup,setupdpopup,userid,setuserid,popup,setpopup,getuserprofile,profile}}>
         
         {children}
 

@@ -11,7 +11,7 @@ import Passwordpopup from "../passwordpopup/Passwordpopup";
 export default function Navbar() {
     const[changepass,setchangepass]=useState(false)
 
-    const [myprofile,setmyprofile]=useState(null)
+    const {myprofile,getmyprofile}=useContext(Authcontext)
 
     const [countnot,setcountnot]=useState(null)
     async function getunreadcount(){
@@ -61,24 +61,7 @@ export default function Navbar() {
    
     const {userid}=useContext(Authcontext)
     const {token,settoken} =useContext(Authcontext)
-    async function getmyprofile(){
-     try {
-         const options={
-          url:'https://route-posts.routemisr.com/users/profile-data',
-          method:"GET",
-          headers:{
-              token
-          }
-      }
-      const {data}=await axios.request(options)
-      setmyprofile(data.data)
-     } catch (error) {
-        console.log(error);
-        
-     }
-      
-      
-     }
+    
       async function getsuggestions(){
        try {
          const options={
