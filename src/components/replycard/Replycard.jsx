@@ -89,7 +89,7 @@ export default function Replycard({reply,postid,getreply}) {
         onSubmit:handlesubmitedit
     })
 
-    const iscommentowner=commentCreator._id===userid
+    const iscommentowner=commentCreator._id==userid
 
   return <>
   <div className="flex gap-2 mx-20 ">

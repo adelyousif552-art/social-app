@@ -184,7 +184,7 @@ export default function Profile() {
       return <Postcard  getposts={getuserposts} key={postinfo.id} postinfo={postinfo}/>
 
     }):bookmarks||openfollowers||openfollowing?'':<PostCardSkeleton/>}
-    {bookmarks&&profile.user.bookmarksCount?<Bookmarks navbar={false}/>:''}
+    {bookmarks&&profile.user.bookmarksCount?<Bookmarks getposts={getuserposts} navbar={false}/>:''}
    {openfollowers?
     profile?.user.followers.length?userprofile?.user.followers.map((user)=>{
       return <div>

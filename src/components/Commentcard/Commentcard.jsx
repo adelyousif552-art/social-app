@@ -14,7 +14,9 @@ import Commentreply from "../commentreply/commentreply"
 export default function Commentcard({topcomment,reply,postid,getposts}) {
    
     
+    
     const {userid}=useContext(Authcontext)
+    const iscommentowner=topcomment.commentCreator._id==userid
  
     const [editopened,seteditopened]=useState(false)
     
@@ -251,10 +253,12 @@ export default function Commentcard({topcomment,reply,postid,getposts}) {
             <button onClick={()=>{
                 setreplyopened(!replyopened)
             }} className="cursor-pointer">Reply</button>
+            {iscommentowner?<>
+            
             <button onClick={()=>{
                 seteditopened(!editopened)
             }} className="cursor-pointer">Edit</button>
-            <button onClick={deletecomment} className="cursor-pointer">Delete</button>
+            <button onClick={deletecomment} className="cursor-pointer">Delete</button></>:''}
            </div>
                 
             </div>

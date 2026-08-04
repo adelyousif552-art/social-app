@@ -4,9 +4,10 @@ import { Authcontext } from "../../Context/Auth.context";
 import Postcard from "../../components/Postcard/Postcard";
 import Navbar from "../../components/Navbar/Navbar";
 import PostCardSkeleton from "../../components/Postcardskeleton/Postcardskeleton";
+import Popup from '../../components/Popup/Popup'
 
-
-export default function Bookmarks({navbar=true}) {
+export default function Bookmarks({navbar=true,getposts}) {
+  const {popup}=useContext(Authcontext)
     const [comments,setcomments]=useState(null)
     const [bookmarks,setbookmarks]=useState(null)
     const {token}=useContext(Authcontext)
@@ -54,6 +55,7 @@ export default function Bookmarks({navbar=true}) {
 
   }):<PostCardSkeleton/>}
   </div>
+{popup?<Popup getposts={getposts}/>:''}
   
   </>
 }

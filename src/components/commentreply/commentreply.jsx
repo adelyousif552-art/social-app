@@ -4,7 +4,7 @@ import { Authcontext } from '../../Context/Auth.context'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import { faImage, faPaperPlane } from '@fortawesome/free-regular-svg-icons'
-import Replycard from '../Replycard/Replycard'
+import Replycard from '../replycard/Replycard'
 
 export default function Commentreply({replyopened,commentid,reply,formik,postid,previewimage,setpreviewimage,showreplies,replycomments,setshowreplies,image,boy,getreply}) {
     
