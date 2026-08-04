@@ -110,7 +110,7 @@ export default function Navbar() {
         getsuggestions()
         
         
-    },[token])
+    },[token,myprofile])
     
     const [search,setsearch]=useState('')
     const [isfocused,setisfocused]=useState(false)
@@ -212,7 +212,7 @@ export default function Navbar() {
                     </div>:''}
                 </div>
                 
-                <Link to={'/bookmark'} className=" relative" > <span className=" size-4 right-0 translate-x-1/2 -top-2 rounded-full bg-blue-500 absolute flex items-center justify-center text-white">{myprofile?.user.bookmarksCount}</span> <FontAwesomeIcon icon={faBookmark} /></Link>
+                <Link to={'/bookmark'} className=" relative" > <span className=" size-4 right-0 translate-x-1/2 -top-2 rounded-full text-xs bg-blue-500 absolute flex items-center justify-center text-white">{myprofile?.user.bookmarksCount}</span> <FontAwesomeIcon icon={faBookmark} /></Link>
             </div>
             <label onClick={()=>{
                 navigate('/')

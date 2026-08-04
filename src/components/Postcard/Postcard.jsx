@@ -15,7 +15,7 @@ import { toast } from "react-toastify";
 
 
 export default function Postcard({postinfo,getcomments,showallcomments,comments,getposts,setrefreshsidebar}) {
-   const {setpopup,setsharedpost,setupdpopup,setupdatedpost}=useContext(Authcontext)
+   const {setpopup,setsharedpost,setupdpopup,setupdatedpost,getmyprofile}=useContext(Authcontext)
 
     
    
@@ -191,6 +191,7 @@ headers:{
         <ul className="space-y-3 *:cursor-pointer  *:hover:bg-blue-500 *:hover:text-white *:transition-all *:duration-200 *:p-2">
             <li className={`${postbookmarked?'bg-blue-500 text-white':''}`}>
                <button   onClick={()=>{
+                getmyprofile()
                 bookmarks()
                 setpostbookmarked(!postbookmarked)
                 setopenlist(false)
