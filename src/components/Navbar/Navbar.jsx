@@ -130,7 +130,7 @@ export default function Navbar() {
                 }} className="flex cursor-pointer  relative items-center"><img className="size-8 rounded-full" src={profile?.user.photo} alt={profile?.user.name}/> <span>{profile?.user.name}</span>
                {listopen? <div className="bg-white z-50 cursor-pointer rounde-xl shadow top-full  absolute">
                     <ul className="space-y-3 *:hover:bg-blue-500 *:hover:text-white *:p-2 *:transition-all *:duration-200">
-                        <li><Link to={`/${userid}/profile`}>myprofile</Link></li>
+                        <li><Link to={`/${userid}/profile`}>My Profile</Link></li>
                         <li onClick={()=>{
                             setchangepass(true)
                         }}>password</li>
@@ -269,7 +269,7 @@ e.stopPropagation()
                </ul>:''}
             </div>
         </li>
-                 <li className="hover:bg-blue-500 hover:text-white p-2 transition-all duration-200 cursor-pointer"><Link to={`/${userid}/profile`}>myprofile</Link></li>
+                 <li className="hover:bg-blue-500 hover:text-white p-2 transition-all duration-200 cursor-pointer"><Link className="w-full" to={`/${userid}/profile`}>My Profile</Link></li>
                         
                        
                         
@@ -278,12 +278,12 @@ e.stopPropagation()
                
             
         
-        <li className="hover:bg-blue-500 hover:text-white p-2 cursor-pointer transition-all duration-200" ><NavLink to={'/'} className={` space-x-2`}><FontAwesomeIcon className="" icon={faHouse} /><span>Home</span></NavLink></li>
+        <li className="hover:bg-blue-500 hover:text-white p-2 cursor-pointer transition-all duration-200" ><NavLink to={'/'} className={` w-full space-x-2`}><FontAwesomeIcon className="" icon={faHouse} /><span>Home</span></NavLink></li>
        
         <li className="hover:bg-blue-500 hover:text-white p-2 transition-all duration-200 cursor-pointer "> 
                
                 
-                <Link  to={'/bookmark'} className=" relative" > <FontAwesomeIcon icon={faBookmark} /> <span>Bookmarks</span></Link>
+                <Link  to={'/bookmark'} className=" w-full relative" > <FontAwesomeIcon icon={faBookmark} /> <span>Bookmarks</span></Link>
             </li>
 
     </ul>
@@ -296,7 +296,7 @@ e.stopPropagation()
         <li className="hover:bg-blue-500 hover:text-white p-2 transition-all duration-200 cursor-pointer" onClick={()=>{
                             localStorage.removeItem('token')
                             settoken(null)
-                        }}><Link to={'/login'}>Logout</Link></li>
+                        }}><Link className="w-full" to={'/login'}>Logout</Link></li>
     </ul>
    </div>
    </div>

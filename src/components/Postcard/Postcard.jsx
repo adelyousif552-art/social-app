@@ -152,6 +152,7 @@ headers:{
  
  
   
+  
  
     
     
@@ -261,10 +262,10 @@ headers:{
                 <FontAwesomeIcon className={``} icon={faThumbsUp}/>
                 <span>Like</span>
             </button>
-             <button className="border-y border-gray-500/70">
+             <label htmlFor={`${postinfo.id}comment`} className="border-y text-center border-gray-500/70">
                 <FontAwesomeIcon icon={faComment} />
                 <span>Comment</span>
-            </button>
+            </label>
              <button onClick={()=>{
                 setpopup(true)
                 setsharedpost(postinfo)
@@ -282,15 +283,15 @@ headers:{
                 </div>
                 <div className="commentinput grow">
                     <input type="text"
-                     id="comment"
+                     id={`${postinfo.id}comment`}
                       placeholder="write a comment"
                        className="form-control"
                        name="content"
                        onChange={formik.handleChange}
-                       onBlur={formik.handleBlur}
+                       
                        value={formik.values.content}
                        />
-                       {formik.errors.content&&formik.touched.content?<p className="text-red-500">{formik.errors.content}</p>:''}
+                       {formik.errors.content?<p className="text-red-500">{formik.errors.content}</p>:''}
                 </div>
                 <div className="file">
                     <label className="size-8 rounded-full flex items-center justify-center border border-gray-400/50 cursor-pointer hover:bg-gray-400/50 transition-colors duration-200" htmlFor={postinfo.id}><FontAwesomeIcon icon={faImage}/></label>
@@ -348,15 +349,15 @@ headers:{
             </div>
            <span className="text-sm text-gray-600/80">{commentsCount} Comments</span>
         </div>
-        <div className="reactionbuttons *:cursor-pointer lg:*:hover:bg-gray-100 *:transition-colors *:duration-200 flex *:grow *:p-3">
+        <div className="reactionbuttons *:cursor-pointer *:hover:bg-gray-100 *:transition-colors *:duration-200 flex *:grow *:p-3">
             <button onClick={putlikes} className={`border-y ${like?'text-blue-600 font-semibold':''}  transition-colors duration-400  border-gray-500/70 `}>
                 <FontAwesomeIcon className={``} icon={faThumbsUp}/>
                 <span>Like</span>
             </button>
-             <button className="border-y border-gray-500/70">
+             <label htmlFor={`${postinfo.id}comment`} className="border-y text-center border-gray-500/70">
                 <FontAwesomeIcon icon={faComment} />
                 <span>Comment</span>
-            </button>
+            </label>
              <button onClick={()=>{
                 setpopup(true)
                 setsharedpost(postinfo)
@@ -374,15 +375,15 @@ headers:{
                 </div>
                 <div className="commentinput grow">
                     <input type="text"
-                     id="comment"
+                     id={`${postinfo.id}comment`}
                       placeholder="write a comment"
                        className="form-control"
                        name="content"
                        onChange={formik.handleChange}
-                       onBlur={formik.handleBlur}
+                       
                        value={formik.values.content}
                        />
-                       {formik.errors.content&&formik.touched.content?<p className="text-red-500">{formik.errors.content}</p>:''}
+                       {formik.errors.content?<p className="text-red-500">{formik.errors.content}</p>:''}
                 </div>
                 <div className="file">
                     <label className="size-8 rounded-full flex items-center justify-center border border-gray-400/50 cursor-pointer hover:bg-gray-400/50 transition-colors duration-200" htmlFor={postinfo.id}><FontAwesomeIcon icon={faImage}/></label>
