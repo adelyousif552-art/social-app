@@ -211,7 +211,7 @@ export default function Commentcard({topcomment,reply,postid,getposts}) {
             </div>
             <div >
                 {editopened?<form onSubmit={editformik.handleSubmit}>
-                    <div className="flex items-center space-x-2 justify-between">
+                    <div className="lg:flex lg:items-center  space-y-2 lg:space-y-0 lg:space-x-2 lg:justify-between">
                         <div className="flex items-center space-x-2">
                             <input className="form-control" type="text" name="content" value={editformik.values.content} onChange={editformik.handleChange} onBlur={editformik.handleBlur} />
                             <label htmlFor="comedit" className="cursor-pointer"><FontAwesomeIcon icon={faImage}/></label>
@@ -222,11 +222,13 @@ export default function Commentcard({topcomment,reply,postid,getposts}) {
                                setpreviewimage2(url)
                             }} />
                         </div>
-                        <button type="submit" className="btn border border-blue-500">save</button>
+                       <div className="space-x-2">
+                         <button type="submit" className="btn border border-blue-500">save</button>
                         <button type="button" onClick={()=>{
                             seteditopened(false)
 
                         }} className="btn border border-red-500">cancel</button>
+                       </div>
                     </div>
                     {previewimage2?<div className="relative size-20">
                         <img className="w-full" src={previewimage2} alt="user" />

@@ -98,7 +98,7 @@ export default function Replycard({reply,postid,getreply}) {
     </div>
     <div >
         {editopened?<form onSubmit={editformik.handleSubmit}>
-            <div className="flex items-center space-x-2 justify-between">
+            <div className="lg:flex lg:items-center space-y-2 lg:space-y-0 lg:space-x-2 lg:justify-between">
                 <div className="flex items-center space-x-2">
                     <input className="form-control" type="text" name="content" value={editformik.values.content} onChange={editformik.handleChange} onBlur={editformik.handleBlur} />
                     <label htmlFor={`replyedit-${_id}`} className="cursor-pointer"><FontAwesomeIcon icon={faImage}/></label>
@@ -109,10 +109,12 @@ export default function Replycard({reply,postid,getreply}) {
                        setpreviewimage2(url)
                     }} />
                 </div>
-                <button type="submit" className="btn border border-blue-500">save</button>
+               <div className="space-x-2">
+                 <button type="submit" className="btn border border-blue-500">save</button>
                 <button type="button" onClick={()=>{
                     seteditopened(false)
                 }} className="btn border border-red-500">cancel</button>
+               </div>
             </div>
             {previewimage2?<div className="relative size-20">
                 <img className="w-full" src={previewimage2} alt="user" />
@@ -129,7 +131,7 @@ export default function Replycard({reply,postid,getreply}) {
         {image&&!editopened?<div>
             <img className="size-20" src={image} alt="user" />
         </div>:''}
-         <div className="space-x-3">
+         <div className="space-x-3 text-sm lg:text-base">
     <span>{new Date(createdAt).toDateString()}</span>
     <button onClick={likereply} className={`cursor-pointer ${likecommentt?'text-blue-600':''}`}>{likecommentt?'liked':'like'}</button>
     {iscommentowner?<button onClick={()=>{
