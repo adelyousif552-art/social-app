@@ -120,6 +120,7 @@ export default function Postcard({postinfo,getcomments,showallcomments,comments,
             }
         }
         const {data}=await axios.request(options)
+        getmyprofile()
         
         
        
@@ -191,7 +192,7 @@ headers:{
         <ul className="space-y-3 *:cursor-pointer  *:hover:bg-blue-500 *:hover:text-white *:transition-all *:duration-200 *:p-2">
             <li className={`${postbookmarked?'bg-blue-500 text-white':''}`}>
                <button   onClick={()=>{
-                getmyprofile()
+                
                 bookmarks()
                 setpostbookmarked(!postbookmarked)
                 setopenlist(false)

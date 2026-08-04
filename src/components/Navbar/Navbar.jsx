@@ -110,7 +110,7 @@ export default function Navbar() {
         getsuggestions()
         
         
-    },[token,myprofile])
+    },[token])
     
     const [search,setsearch]=useState('')
     const [isfocused,setisfocused]=useState(false)
